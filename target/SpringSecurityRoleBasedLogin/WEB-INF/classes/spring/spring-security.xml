@@ -1,0 +1,166 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+             http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+    http://www.springframework.org/schema/security
+    http://www.springframework.org/schema/security/spring-security-4.0.xsd">
+
+
+<!--配置跳过拦截器的url 或资源文件等-->
+    <http pattern="/user/findAll" security="none" />
+
+    <http auto-config="true" use-expressions="true"  access-decision-manager-ref="myaccessDecisionManager">
+        <!--
+        属性                  Webonly?            描述                          例子
+        permitAll               No        任何用户均可访问                  access="permitAll"
+        denyAll                 NO        任何用户均不可访问                 access="denyAll"
+        anonymous               NO        匿名用户可访问                       access="anonymous"
+        authenticated           NO    检查用户是否认证过                     access="authenticated"
+        rememberMe              No  检查用户是否通过remember me功能认证的        access="rememberMe"
+        fullyAuthenticated      No 检查用户是否通过提供完整的凭证信息来认证的    access="fullyAuthenticated"
+--><!--
+        <intercept-url pattern="/admin**" access="hasRole('ROLE_ADMIN')" />
+        <intercept-url pattern="/" access="permitAll" />
+        <intercept-url pattern="/home" access="permitAll" />
+       &lt;!&ndash; <intercept-url pattern="/user/**" access="permitAll"/>&ndash;&gt;
+        <intercept-url pattern="/admin**" access="hasRole('ROLE_ADMIN')" />
+        <intercept-url pattern="/dba**" access="hasRole('ROLE_ADMIN') and hasRole('ROLE_DBA')" />-->
+
+        <form-login
+                login-page="/login"
+                default-target-url="/welcome"
+                authentication-failure-url="/Access_Denied"
+                authentication-success-handler-ref="customSuccessHandler"
+                username-parameter="ssoId"
+                password-parameter="password"  />
+
+        <!--
+        invalidate-session 如果被设置为 true，用户的 HTTP session 将会在退出时被失效。 在一些场景下，这是必要的（如用户拥有一个购物车时）
+        logout-success-url 用户在退出后将要被重定向到的URL 。默认为/。将会通过HttpServletResponse.redirect 来处理。
+        logout-url LogoutFilter 要读取的 URL（在例子中，我们改变了它的设置）。
+        success-handler-ref 对一个 LogoutSuccessHandler 实现的引用
+        -->
+
+        <logout invalidate-session="true"
+                logout-success-url="/"
+                logout-url="/logout"/>
+        <!-- enable csrf protection -->
+        <custom-filter ref="myfilterSecurityInterceptor" before="FILTER_SECURITY_INTERCEPTOR"/>
+        <remember-me key="jbcpPetStore" token-validity-seconds="1000000"/>
+        <csrf/>
+    </http>
+
+    <!--<authentication-manager>
+        <authentication-provider>
+            <user-service>
+                <user name="yiibai" password="123456" authorities="ROLE_ADMIN" />
+            </user-service>
+        </authentication-provider>
+    </authentication-manager>-->
+  <!--  <beans:bean id="customSuccessHandler" class="com.yu.spring.security.CustomSuccessHandler" />
+
+    <user-service id="userService"/>-->
+
+   <!-- <beans:bean class="com.yu.spring.security.IPTokenBasedRememberMeServices" id="ipTokenBasedRememberMeServicesBean">
+
+        <beans:property name="key" >
+
+            <beans:value>jbcpPetStore</beans:value>
+        </beans:property>
+        <beans:property name="userDetailsService" ref="userService"/>
+    </beans:bean>
+-->
+
+
+    <!--登陆成功url跳转-->
+    <beans:bean id="customSuccessHandler" class="com.yu.spring.security.CustomSuccessHandler" />
+
+    <!-- 启用表达式 为了后面的投票器做准备 -->
+   <!-- <beans:bean class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler"
+            id="expressionHandler" />
+    <beans:bean
+            class="org.springframework.security.web.access.expression.WebExpressionVoter"
+            id="expressionVoter">
+        <beans:property name="expressionHandler" ref="expressionHandler" />
+    </beans:bean>-->
+
+
+
+
+
+
+    <!-- ****************     认证过滤器     过滤器      ********* -->
+    <beans:bean id="myfilterSecurityInterceptor" class="org.springframework.security.web.access.intercept.FilterSecurityInterceptor">
+    <!-- 用户拥有的权限 -->
+        <beans:property name="authenticationManager" ref="myauthenticationManager" />
+        <!-- 判断权限-->
+        <beans:property name="accessDecisionManager" ref="myaccessDecisionManager" />
+        <!--资源与权限关系-->
+        <beans:property name="securityMetadataSource" ref="mySecurityMetadataSource"/>
+    </beans:bean>
+
+    <beans:bean id="mySecurityMetadataSource" class="com.yu.spring.security.MyInvocationSecurityMetadataSource"/>
+
+    <!-- ****************     认证过滤器      ********* -->
+
+
+    <!--密码编码器Bcrypt-->
+    <beans:bean id="bcryptEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
+
+
+
+
+
+    <!-- *********************     认证管理器    start       ****************************-->
+
+    <authentication-manager alias="myauthenticationManager">
+        <authentication-provider  user-service-ref="customUserDetailsService" >
+            <password-encoder ref="bcryptEncoder" />
+        </authentication-provider>
+    </authentication-manager>
+
+    <!--身份验证-->
+    <beans:bean id="customUserDetailsService" class="com.yu.spring.security.CustomUserDetailsService" />
+    <!-- *********************      认证管理器    end      ****************************-->
+
+
+
+
+
+
+    <beans:bean id="myauthenticationProvider" class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
+        <beans:property name="hideUserNotFoundExceptions" value="false" />
+        <beans:property name="userDetailsService" ref="customUserDetailsService" />
+        <!--<property name="userCache" ref="userCache" />-->
+        <beans:property name="messageSource" ref="messageSource" /><!--MessageSource用于获取国际化信息-->
+        <beans:property name="passwordEncoder" ref="bcryptEncoder" />
+        <beans:property name="saltSource" ref="saltSource" />
+    </beans:bean>
+
+    <beans:bean id="saltSource" class="org.springframework.security.authentication.dao.ReflectionSaltSource">
+        <beans:property name="userPropertyToUse" value="salt"/><!-- 加盐的 LoginEmployeeUser的成员属性-->
+    </beans:bean>
+
+
+
+
+    <!--***************访问决定管理器 用于决定是否对请求进行拒绝或者允许通行       start      ************** -->
+    <beans:bean id="myaccessDecisionManager" class="org.springframework.security.access.vote.AffirmativeBased">
+        <beans:constructor-arg name="decisionVoters">
+            <beans:list>
+                <beans:ref bean="roleVoter"/>
+                <beans:ref bean="authenticatedVoter"/>
+            </beans:list>
+        </beans:constructor-arg>
+    </beans:bean>
+    <!--角色投票器 -->
+    <beans:bean id="roleVoter" class="org.springframework.security.access.vote.RoleVoter">
+        <beans:property name="rolePrefix" value=""></beans:property>
+    </beans:bean>
+    <!--鉴权投票器 -->
+    <beans:bean id="authenticatedVoter" class="org.springframework.security.access.vote.AuthenticatedVoter" />
+    <!--***************访问决定管理器 用于决定是否对请求进行拒绝或者允许通行       end        ************** -->
+
+
+</beans:beans>
