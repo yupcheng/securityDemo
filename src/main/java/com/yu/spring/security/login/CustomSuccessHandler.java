@@ -1,4 +1,4 @@
-package com.yu.spring.security;
+package com.yu.spring.security.login;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;

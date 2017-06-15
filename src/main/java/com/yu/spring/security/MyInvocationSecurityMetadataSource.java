@@ -21,6 +21,9 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.*;
 
 /**
+ * 用户权限加载
+ * 用户权限验证（该用户是否有权限访问）
+ * 资源和权限关系映射（资源/权限码）
  * Created by Administrator on 2017/6/12.
  */
 public class MyInvocationSecurityMetadataSource implements FilterInvocationSecurityMetadataSource , InitializingBean {
@@ -29,12 +32,11 @@ public class MyInvocationSecurityMetadataSource implements FilterInvocationSecur
     private final static String                              RES_KEY               = "resourcePath";
     private final static String                              AUTH_KEY              = "authorityMark";
     private final static List<ConfigAttribute> NULL_CONFIG_ATTRIBUTE = Collections.emptyList();
-    //权限集合
+    //权限集合，url/权限码（启动加载）
     private Map<RequestMatcher, Collection<ConfigAttribute>> requestMap;
     public final static Map<String, List<Privilege>>       arr                   = new HashMap<String, List<Privilege>>();
     @Autowired
     private MenuService menuService;
-
     @Autowired
     private PrivilegeService privilegeService;
 

@@ -88,7 +88,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         if (user == null) {
             throw new RuntimeException("can not find user : " + ssoId);
         }
-        auths = this.loadUserAuthorities(user.getId());// 获取所有权限
+        auths = this.loadUserAuthorities(user.getId());// 获取该用户所有权限
         return new org.springframework.security.core.userdetails.User(user.getSsoId(), user.getPassword(),
                 user.getState().equals("Active"), true, true, true, auths);
     }
