@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fc5c114-def4-41d7-bc8e-2844db46a6ce" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/dao/AbstractDao.class" afterPath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/dao/AbstractDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/dao/impl/PrivilegeDaoImpl.class" afterPath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/dao/impl/PrivilegeDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/entity/User.class" afterPath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/entity/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/security/CustomUserDetailsService.class" afterPath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/security/CustomUserDetailsService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/security/MyInvocationSecurityMetadataSource.class" afterPath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/security/MyInvocationSecurityMetadataSource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yu/spring/dao/AbstractDao.class" afterPath="$PROJECT_DIR$/target/classes/com/yu/spring/dao/AbstractDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yu/spring/dao/impl/PrivilegeDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/yu/spring/dao/impl/PrivilegeDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yu/spring/entity/User.class" afterPath="$PROJECT_DIR$/target/classes/com/yu/spring/entity/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yu/spring/security/CustomUserDetailsService.class" afterPath="$PROJECT_DIR$/target/classes/com/yu/spring/security/CustomUserDetailsService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yu/spring/security/MyInvocationSecurityMetadataSource.class" afterPath="$PROJECT_DIR$/target/classes/com/yu/spring/security/MyInvocationSecurityMetadataSource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/yu/spring/Demo.class" afterPath="$PROJECT_DIR$/target/test-classes/com/yu/spring/Demo.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/spring/spring-security.xml" afterPath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/spring/spring-security.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/spring/spring-security.xml" afterPath="$PROJECT_DIR$/target/classes/spring/spring-security.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -201,7 +188,7 @@
       <GitPushTagMode />
     </option>
     <push-targets>
-      <push-target-info repo="$PROJECT_DIR$" source="master" target-remote="origin" target-branch="master/securityDemo" />
+      <push-target-info repo="$PROJECT_DIR$" source="master" target-remote="origin" target-branch="securityDemo" />
     </push-targets>
   </component>
   <component name="GradleLocalSettings">
@@ -1217,7 +1204,7 @@
       <workItem from="1497401612210" duration="1720000" />
       <workItem from="1497409594343" duration="17160000" />
       <workItem from="1497490221458" duration="11379000" />
-      <workItem from="1497502248953" duration="3618000" />
+      <workItem from="1497502248953" duration="4317000" />
     </task>
     <task id="LOCAL-00001" summary="更新代码，登陆失败已解决。原因：密码解析器没有配置">
       <created>1497424587663</created>
@@ -1296,11 +1283,18 @@
       <option name="project" value="LOCAL" />
       <updated>1497506006794</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="完成权限验证逻辑，登陆异常，访问无权限等处理下次解决">
+      <created>1497506111068</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1497506111068</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="150059000" />
+    <option name="totallyTimeSpent" value="150758000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1373,7 +1367,8 @@
     <MESSAGE value="更新代码，登陆失败已解决。原因：密码解析器没有配置" />
     <MESSAGE value="更新代码，登陆失败已解决。原因：密码解析器没有配置&#10;&#10;Signed-off-by: yupcheng &lt;1107674062@qq.com&gt;&#10;" />
     <MESSAGE value="完成权限验证逻辑" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成权限验证逻辑" />
+    <MESSAGE value="完成权限验证逻辑，登陆异常，访问无权限等处理下次解决" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成权限验证逻辑，登陆异常，访问无权限等处理下次解决" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
