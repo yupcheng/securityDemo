@@ -28,7 +28,7 @@ public abstract class AbstractDao<PK extends Serializable, T> {
     private SessionFactory sessionFactory;
 
     protected Session getSession(){
-        return sessionFactory.openSession();
+        return sessionFactory.getCurrentSession();
     }
 
     @SuppressWarnings("unchecked")

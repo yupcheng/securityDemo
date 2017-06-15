@@ -19,13 +19,14 @@
         authenticated           NO    检查用户是否认证过                     access="authenticated"
         rememberMe              No  检查用户是否通过remember me功能认证的        access="rememberMe"
         fullyAuthenticated      No 检查用户是否通过提供完整的凭证信息来认证的    access="fullyAuthenticated"
---><!--
-        <intercept-url pattern="/admin**" access="hasRole('ROLE_ADMIN')" />
-        <intercept-url pattern="/" access="permitAll" />
+
+        -->
+       <!-- <intercept-url pattern="/admin**" access="hasRole('ROLE_ADMIN')" />-->
+    <!--    <intercept-url pattern="/" access="permitAll" />
         <intercept-url pattern="/home" access="permitAll" />
        &lt;!&ndash; <intercept-url pattern="/user/**" access="permitAll"/>&ndash;&gt;
-        <intercept-url pattern="/admin**" access="hasRole('ROLE_ADMIN')" />
-        <intercept-url pattern="/dba**" access="hasRole('ROLE_ADMIN') and hasRole('ROLE_DBA')" />-->
+        <intercept-url pattern="/admin**" access="hasRole('ADMIN')" />
+        <intercept-url pattern="/dba**" access="hasRole('ADMIN') and hasRole('DBA')" />-->
 
         <form-login
                 login-page="/login"
@@ -93,7 +94,7 @@
     <!-- ****************     认证过滤器     过滤器      ********* -->
     <beans:bean id="myfilterSecurityInterceptor" class="org.springframework.security.web.access.intercept.FilterSecurityInterceptor">
     <!-- 用户拥有的权限 -->
-        <beans:property name="authenticationManager" ref="myauthenticationManager" />
+        <beans:property name="authenticationManager" ref="authenticationManager" />
         <!-- 判断权限-->
         <beans:property name="accessDecisionManager" ref="myaccessDecisionManager" />
         <!--资源与权限关系-->
@@ -114,9 +115,9 @@
 
     <!-- *********************     认证管理器    start       ****************************-->
 
-    <authentication-manager alias="myauthenticationManager">
-        <authentication-provider  user-service-ref="customUserDetailsService" >
-            <password-encoder ref="bcryptEncoder" />
+    <authentication-manager alias="authenticationManager">
+        <authentication-provider  ref="myauthenticationProvider" >
+           <!--<password-encoder ref="bcryptEncoder" />-->
         </authentication-provider>
     </authentication-manager>
 
@@ -135,14 +136,16 @@
         <!--<property name="userCache" ref="userCache" />-->
         <beans:property name="messageSource" ref="messageSource" /><!--MessageSource用于获取国际化信息-->
         <beans:property name="passwordEncoder" ref="bcryptEncoder" />
-        <beans:property name="saltSource" ref="saltSource" />
+        <!--<beans:property name="saltSource" ref="saltSource" />-->
     </beans:bean>
 
     <beans:bean id="saltSource" class="org.springframework.security.authentication.dao.ReflectionSaltSource">
         <beans:property name="userPropertyToUse" value="salt"/><!-- 加盐的 LoginEmployeeUser的成员属性-->
     </beans:bean>
 
+    <beans:bean id="accessDecisionManager" class="com.yu.spring.security.CustomAccessDecisionManager">
 
+    </beans:bean>
 
 
     <!--***************访问决定管理器 用于决定是否对请求进行拒绝或者允许通行       start      ************** -->

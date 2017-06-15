@@ -3,20 +3,14 @@ package com.yu.spring.entity;
 /**
  * Created by Administrator on 2017/6/7.
  */
+import org.springframework.security.core.GrantedAuthority;
+
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="APP_USER")
@@ -53,7 +47,16 @@ public class User implements Serializable{
             joinColumns = { @JoinColumn(name = "USER_ID") },
             inverseJoinColumns = { @JoinColumn(name = "ROLE_ID") })
     private Set<Role> roles = new HashSet<Role>();
+   /* @Transient
+    private Collection<GrantedAuthority> authorities;
 
+    public Collection<GrantedAuthority> getAuthorities() {
+        return authorities;
+    }
+
+    public void setAuthorities(Collection<GrantedAuthority> authorities) {
+        this.authorities = authorities;
+    }*/
 
     public int getId() {
         return id;

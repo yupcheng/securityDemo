@@ -11,6 +11,7 @@ import com.yu.spring.util.PageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,7 +34,10 @@ public class PrivilegeDaoImpl extends AbstractDao<Integer,Privilege> implements 
             {
                 if(role.getMenus() != null && role.getMenus().size() >0)
                 {
-                    role.getMenus();
+                    for(Menu menu : role.getMenus())
+                    {
+                        privileges.addAll(new ArrayList<Privilege>(menu.getPrivileges()));
+                    }
 
                 }
             }

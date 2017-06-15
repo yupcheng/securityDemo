@@ -4,6 +4,8 @@ import com.yu.spring.dao.MenuDao;
 import com.yu.spring.dao.PrivilegeDao;
 import com.yu.spring.entity.Menu;
 import com.yu.spring.entity.Privilege;
+import com.yu.spring.service.MenuService;
+import com.yu.spring.service.PrivilegeService;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.InitializingBean;
@@ -31,8 +33,17 @@ public class MyInvocationSecurityMetadataSource implements FilterInvocationSecur
     private Map<RequestMatcher, Collection<ConfigAttribute>> requestMap;
     public final static Map<String, List<Privilege>>       arr                   = new HashMap<String, List<Privilege>>();
     @Autowired
-    private PrivilegeDao privilegeDao;
+    private MenuService menuService;
 
+    @Autowired
+    private PrivilegeService privilegeService;
+
+    /**
+     * 循环遍历，请求的url是否是需要权限，返回权限码数组
+     * @param o
+     * @return
+     * @throws IllegalArgumentException
+     */
     @Override
     public Collection<ConfigAttribute> getAttributes(Object o) throws IllegalArgumentException {
         final HttpServletRequest request = ((FilterInvocation) o).getRequest();
@@ -81,14 +92,15 @@ public class MyInvocationSecurityMetadataSource implements FilterInvocationSecur
         return map;
     }
 
-    @Autowired
-    private MenuDao menuDao;
-
+    /**
+     * 加载需要权限的url
+     * @return
+     */
     public List<Map<String, String>> getURLResourceMapping() {
         List<Map<String, String>> list = new ArrayList<Map<String, String>>();
         List<Menu> menuDoList = null;//所有菜单列表
         try {
-            menuDoList = menuDao.queryMenu();
+            menuDoList = menuService.queryMenu();
             for (int i = 0; menuDoList != null && i < menuDoList.size(); i++) {
                 Menu info = menuDoList.get(i);
                 if (info.getUrl() != null && !"".equals(info.getUrl())) {
@@ -109,7 +121,7 @@ public class MyInvocationSecurityMetadataSource implements FilterInvocationSecur
         //资源列表
         List<Privilege> privilegeDoList = null;
         try {
-            privilegeDoList = this.privilegeDao.queryPrivilege();
+            privilegeDoList = this.privilegeService.queryPrivilege();
             for (int i = 0; privilegeDoList != null && i < privilegeDoList.size(); i++) {
                 Privilege info = privilegeDoList.get(i);
                 if (info.getUrl() != null && !"".equals(info.getUrl())) {
@@ -185,6 +197,8 @@ public class MyInvocationSecurityMetadataSource implements FilterInvocationSecur
     public void afterPropertiesSet() throws Exception {
         this.requestMap = this.bindRequestMap();
     }
+
+
 
 
     protected Map<RequestMatcher, Collection<ConfigAttribute>> bindRequestMap() {
