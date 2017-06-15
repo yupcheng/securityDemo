@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8fc5c114-def4-41d7-bc8e-2844db46a6ce" name="Default" comment="更新代码，登陆失败已解决。原因：密码解析器没有配置&#10;&#10;Signed-off-by: yupcheng &lt;1107674062@qq.com&gt;&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/yu/spring/security/CustomAccessDecisionManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/yu/spring/service/MenuService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/yu/spring/service/PrivilegeService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/yu/spring/service/impl/MenuServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/yu/spring/service/impl/PrivilegeServiceImpl.java" />
+    <list default="true" id="8fc5c114-def4-41d7-bc8e-2844db46a6ce" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/dao/AbstractDao.class" afterPath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/dao/AbstractDao.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/dao/impl/PrivilegeDaoImpl.class" afterPath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/dao/impl/PrivilegeDaoImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/entity/User.class" afterPath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/entity/User.class" />
@@ -19,12 +14,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yu/spring/security/MyInvocationSecurityMetadataSource.class" afterPath="$PROJECT_DIR$/target/classes/com/yu/spring/security/MyInvocationSecurityMetadataSource.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/yu/spring/Demo.class" afterPath="$PROJECT_DIR$/target/test-classes/com/yu/spring/Demo.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yu/spring/dao/AbstractDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/yu/spring/dao/AbstractDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yu/spring/dao/impl/PrivilegeDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/yu/spring/dao/impl/PrivilegeDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yu/spring/entity/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/yu/spring/entity/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yu/spring/security/CustomUserDetailsService.java" afterPath="$PROJECT_DIR$/src/main/java/com/yu/spring/security/CustomUserDetailsService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yu/spring/security/MyInvocationSecurityMetadataSource.java" afterPath="$PROJECT_DIR$/src/main/java/com/yu/spring/security/MyInvocationSecurityMetadataSource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-security.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-security.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/spring/spring-security.xml" afterPath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/spring/spring-security.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/spring/spring-security.xml" afterPath="$PROJECT_DIR$/target/classes/spring/spring-security.xml" />
     </list>
@@ -1228,7 +1217,7 @@
       <workItem from="1497401612210" duration="1720000" />
       <workItem from="1497409594343" duration="17160000" />
       <workItem from="1497490221458" duration="11379000" />
-      <workItem from="1497502248953" duration="3533000" />
+      <workItem from="1497502248953" duration="3618000" />
     </task>
     <task id="LOCAL-00001" summary="更新代码，登陆失败已解决。原因：密码解析器没有配置">
       <created>1497424587663</created>
@@ -1300,11 +1289,18 @@
       <option name="project" value="LOCAL" />
       <updated>1497429370176</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="完成权限验证逻辑">
+      <created>1497506006794</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1497506006794</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149974000" />
+    <option name="totallyTimeSpent" value="150059000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1376,7 +1372,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="更新代码，登陆失败已解决。原因：密码解析器没有配置" />
     <MESSAGE value="更新代码，登陆失败已解决。原因：密码解析器没有配置&#10;&#10;Signed-off-by: yupcheng &lt;1107674062@qq.com&gt;&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新代码，登陆失败已解决。原因：密码解析器没有配置&#10;&#10;Signed-off-by: yupcheng &lt;1107674062@qq.com&gt;&#10;" />
+    <MESSAGE value="完成权限验证逻辑" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成权限验证逻辑" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
