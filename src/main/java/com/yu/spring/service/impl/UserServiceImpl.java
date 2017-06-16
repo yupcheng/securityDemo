@@ -32,7 +32,13 @@ public class UserServiceImpl implements UserService {
         return dao.findBySSO(sso);
     }
     public void save(User user){
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
-        dao.save(user);
+
+        try {
+            user.setPassword(passwordEncoder.encode(user.getPassword()));
+            dao.save(user);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

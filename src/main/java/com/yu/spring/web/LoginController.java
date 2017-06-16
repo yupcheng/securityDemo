@@ -39,7 +39,7 @@ public class LoginController {
 
     @Autowired
     private RoleService roleService;
-    @RequestMapping(value = { "/", "/home" }, method = RequestMethod.GET)
+    @RequestMapping(value = { "/", "/home" ,"/welcome"}, method = RequestMethod.GET)
     public String homePage(ModelMap model) {
         model.addAttribute("greeting", "Hi, Welcome to mysite");
         return "welcome";
@@ -131,7 +131,7 @@ public class LoginController {
 
 
     @ModelAttribute("user_roles")
-    public List<Role> initializeProfiles() {
+    public List<Role> initializeProfiles(HttpServletRequest request) {
         return roleService.findAll();
     }
 }

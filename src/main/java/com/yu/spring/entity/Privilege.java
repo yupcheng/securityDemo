@@ -7,7 +7,7 @@ import java.util.Date;
  * 权限实体类-->资源
  *存放资源url
  * 与菜单实体类多对一关系
- * mark不可重复，表示权限码
+ *
  * Created by Administrator on 2017/6/12.
  */
 @Entity

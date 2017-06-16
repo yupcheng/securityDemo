@@ -34,8 +34,12 @@ public abstract class AbstractDao<PK extends Serializable, T> {
     @Autowired
     private SessionFactory sessionFactory;
 
+    /**
+     * 采用getCurrentSession()创建的session在commit或rollback时会自动关闭，而采用openSession()创建的session必须手动关闭
+     * @return
+     */
     protected Session getSession(){
-        return sessionFactory.getCurrentSession();
+        return sessionFactory.openSession();
     }
 
     @SuppressWarnings("unchecked")
@@ -44,14 +48,26 @@ public abstract class AbstractDao<PK extends Serializable, T> {
     }
 
     public void save(T entity) {
-        getSession().persist(entity);
+        try {
+            getSession().persist(entity);
+        } catch (Exception e) {
+            System.out.println("************保存失败**********");
+            e.printStackTrace();
+        }
     }
 
     public void delete(T entity) {
+
         getSession().delete(entity);
     }
     public void update(T entity){
-        getSession().update(entity);
+
+        try {
+            getSession().update(entity);
+        } catch (Exception e) {
+            System.out.println("************更新失败**********");
+            e.printStackTrace();
+        }
     }
 
     protected Criteria createEntityCriteria(){

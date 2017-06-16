@@ -6,6 +6,7 @@ import com.yu.spring.entity.User;
 import com.yu.spring.util.PageUtil;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
+import org.omg.CORBA.PUBLIC_MEMBER;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -24,10 +25,6 @@ public class UserDaoImpl extends AbstractDao<Integer, User> implements UserDao {
         return (User) crit.uniqueResult();
     }
 
-    @Override
-    public void save(User user) {
-        update(user);
-    }
 
     public PageUtil<User> findAll(User user) {
         PageUtil<User> pageUtil = new PageUtil<>(0,20);

@@ -47,7 +47,7 @@
 
         <property name="converters">
             <set>
-                <bean  class="com.yu.spring.security.RoleToUserRolesConverter" />
+                <bean  class="com.yu.spring.config.RoleToUserRolesConverter" />
             </set>
         </property>
     </bean>

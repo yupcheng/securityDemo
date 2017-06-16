@@ -5,6 +5,8 @@ import com.yu.spring.dao.RoleDao;
 import com.yu.spring.entity.Role;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Projection;
+import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
@@ -23,7 +25,6 @@ public class RoleDaoImpl extends AbstractDao<Integer,Role> implements RoleDao {
     @Override
     public List<Role> findAll() {
         Criteria crit = createEntityCriteria();
-        crit.addOrder(Order.asc("type"));
         return (List<Role>)crit.list();
     }
 

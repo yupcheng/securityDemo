@@ -1,4 +1,4 @@
-package com.yu.spring.security;
+package com.yu.spring.config;
 
 import com.yu.spring.entity.Role;
 import com.yu.spring.service.RoleService;
@@ -36,5 +36,6 @@ public class RoleToUserRolesConverter implements Converter<Object, Role> {
 		return profile;
 	}
 	*/
+
 
 }
