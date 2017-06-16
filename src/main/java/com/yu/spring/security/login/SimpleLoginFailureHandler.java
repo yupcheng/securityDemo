@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * 登陆失败
+ * 登陆失败处理
  * Created by Administrator on 2017/6/15.
  */
 class SimpleLoginFailureHandler extends SimpleUrlAuthenticationFailureHandler {

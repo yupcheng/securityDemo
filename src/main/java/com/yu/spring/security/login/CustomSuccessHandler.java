@@ -28,7 +28,9 @@ public class CustomSuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
     protected void handle(HttpServletRequest request, HttpServletResponse response, Authentication authentication)
             throws IOException {
         String targetUrl = determineTargetUrl(authentication);
-
+/**
+ * response是否已经提交到客户端了，如果已经提交了就不能重定向了
+ */
         if (response.isCommitted()) {
             System.out.println("Can't redirect");
             return;
@@ -37,10 +39,8 @@ public class CustomSuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
         redirectStrategy.sendRedirect(request, response, targetUrl);
     }
 
-    /*
-     * This method extracts the roles of currently logged-in user and returns
-     * appropriate URL according to his/her role.
-     * 重定向到用户对应的角色路径
+    /**
+     * 自定义重定向到用户对应的角色路径
      */
     protected String determineTargetUrl(Authentication authentication) {
         String url = "";

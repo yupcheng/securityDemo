@@ -1,8 +1,5 @@
 package com.yu.spring.entity;
 
-/**
- * Created by Administrator on 2017/6/7.
- */
 import org.springframework.security.core.GrantedAuthority;
 
 import java.io.Serializable;
@@ -11,6 +8,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.*;
+/**
+ * 用户实体类
+ * 与角色是多对多关系
+ * Created by Administrator on 2017/6/7.
+ */
 
 @Entity
 @Table(name="APP_USER")

@@ -12,6 +12,7 @@ import java.util.Collection;
 import java.util.Iterator;
 
 /**
+ * 用户访问权限判断
  * Created by Administrator on 2017/6/15.
  */
 public class CustomAccessDecisionManager implements AccessDecisionManager {
@@ -24,6 +25,7 @@ public class CustomAccessDecisionManager implements AccessDecisionManager {
             ConfigAttribute configAttribute = iterator.next();
             String needCode = configAttribute.getAttribute();
             Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
+            //当前用户角色权限与访问资源需要的权限对比
             for (GrantedAuthority authority : authorities) {
                 if (authority.getAuthority().equals(needCode) ) {
                     return;

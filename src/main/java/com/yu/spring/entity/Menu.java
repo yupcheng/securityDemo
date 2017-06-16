@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.Set;
 
 /**
+ * 用户菜单实体类
+ * 与权限是一个对多关系
  * Created by Administrator on 2017/6/10.
  */
 @Entity

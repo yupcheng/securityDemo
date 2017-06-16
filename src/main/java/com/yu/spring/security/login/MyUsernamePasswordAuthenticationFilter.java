@@ -10,10 +10,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
+ *用户表单登陆过滤器
  * Created by Administrator on 2017/6/15.
  */
 public class MyUsernamePasswordAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
-
+    /**
+     * 登陆表单用户名和密码的字段名称
+     */
     public static final String USERNAME = "ssoId";
     public static final String PASSWORD = "password";
     /**
@@ -28,8 +31,7 @@ public class MyUsernamePasswordAuthenticationFilter extends UsernamePasswordAuth
 
         if (!request.getMethod().equals("POST")) {
             throw new AuthenticationServiceException(
-                    "Authentication method not supported: "
-                            + request.getMethod());
+                    "Authentication method not supported: " + request.getMethod());
         }
         String username = this.obtainUsername(request);
         String password = this.obtainPassword(request);

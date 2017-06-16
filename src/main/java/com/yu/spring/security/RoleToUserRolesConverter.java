@@ -14,7 +14,7 @@ public class RoleToUserRolesConverter implements Converter<Object, Role> {
     RoleService userProfileService;
 
     /*
-     * Gets UserProfile by Id
+     * Gets 用户角色 by Id
      * @see org.springframework.core.convert.converter.Converter#convert(java.lang.Object)
      */
     public Role convert(Object element) {

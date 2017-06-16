@@ -1,5 +1,9 @@
 package com.yu.spring.entity;
 
+/**
+ * 状态
+ * 枚举类型
+ */
 public enum State {
 
     ACTIVE("Active"),

@@ -40,7 +40,6 @@ public class CustomUserDetailsService implements UserDetailsService {
     private UserService userService;
     @Autowired
     private PrivilegeService privilegeService;
-
     @Autowired
     private MenuService menuService;
 
@@ -76,7 +75,12 @@ public class CustomUserDetailsService implements UserDetailsService {
     }
 
 
-
+    /**
+     * 通过用户名加载用户权限
+     * @param ssoId
+     * @return
+     * @throws RuntimeException
+     */
 
     @Transactional(readOnly=true)
     public UserDetails loadUserByUsername (String ssoId) throws RuntimeException

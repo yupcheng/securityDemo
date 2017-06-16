@@ -15,6 +15,13 @@ import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Projections;
 import org.springframework.beans.factory.annotation.Autowired;
 
+/**
+ * dao层基础类
+ * 基本的增删改查
+ * 动态条件分页查询
+ * @param <PK>
+ * @param <T>
+ */
 public abstract class AbstractDao<PK extends Serializable, T> {
 
     private final Class<T> persistentClass;

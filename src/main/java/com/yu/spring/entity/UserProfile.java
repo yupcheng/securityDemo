@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * 用户权限
+ * 用户描述（弃用）
  */
 @Entity
 @Table(name="USER_PROFILE")

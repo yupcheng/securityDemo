@@ -7,6 +7,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
+ * 角色实体类
+ * 与菜单是多对多关系
  * Created by Administrator on 2017/6/10.
  */
 @Entity
