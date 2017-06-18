@@ -18,8 +18,9 @@ import javax.persistence.*;
 @Table(name="APP_USER")
 public class User implements Serializable{
 
-    @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private int id;
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Integer id;
 
     @Column(name="SSO_ID", unique=true, nullable=false)
     private String ssoId;
@@ -44,7 +45,7 @@ public class User implements Serializable{
             joinColumns = { @JoinColumn(name = "USER_ID") },
             inverseJoinColumns = { @JoinColumn(name = "USER_PROFILE_ID") })
     private Set<UserProfile> userProfiles = new HashSet<UserProfile>();*/
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "USER_ROLE",
             joinColumns = { @JoinColumn(name = "USER_ID") },
             inverseJoinColumns = { @JoinColumn(name = "ROLE_ID") })
@@ -60,11 +61,11 @@ public class User implements Serializable{
         this.authorities = authorities;
     }*/
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

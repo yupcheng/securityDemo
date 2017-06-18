@@ -65,7 +65,7 @@ public class LoginController {
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginPage() {
-        return "login";
+        return "user/login";
     }
 
     @RequestMapping(value="/logout", method = RequestMethod.GET)

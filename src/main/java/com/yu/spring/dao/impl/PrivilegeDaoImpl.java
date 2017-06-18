@@ -47,7 +47,7 @@ public class PrivilegeDaoImpl extends AbstractDao<Integer,Privilege> implements 
 
     @Override
     public void insertSelective(Privilege prDo) {
-        save(prDo);
+        persist(prDo);
     }
 
     @Override

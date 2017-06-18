@@ -1,7 +1,9 @@
 package com.yu.spring.dao.impl;
 
+import com.yu.spring.BaseTest;
 import com.yu.spring.dao.UserDao;
 import com.yu.spring.entity.User;
+import com.yu.spring.service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,21 +13,24 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 /**
  * Created by Administrator on 2017/6/16.
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:application.xml"})
-public class UserDaoImplTest {
+
+public class UserDaoImplTest extends BaseTest{
 
     @Autowired
     private UserDao dao ;
+    @Autowired
+    private UserService userService;
     @Test
     public void save() throws Exception {
         User user = new User();
+        //user.setId(null);
         user.setPassword("123");
-        user.setSsoId("wangwu");
+        user.setSsoId("ddd");
         user.setEmail("1107674062@qq.com");
         user.setFirstName("zhang");
         user.setLastName("san");
-        dao.save(user);
+        //dao.save(user);
+        userService.save(user);
     }
 
 }

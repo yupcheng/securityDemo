@@ -30,7 +30,7 @@ public class Role implements Serializable {
     private int state;
     @Column(name="CODE")
     private String code;
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "MENU_ROLE",
             joinColumns = { @JoinColumn(name = "ROLE_ID") },
             inverseJoinColumns = { @JoinColumn(name = "MENU_ID") })

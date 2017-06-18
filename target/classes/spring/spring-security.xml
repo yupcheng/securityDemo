@@ -9,7 +9,7 @@
 
 <!--配置跳过拦截器的url 或资源文件等-->
     <http pattern="/user/findAll" security="none" />
-
+    <http pattern="/static/css/**" security="none" />
     <http auto-config="false" use-expressions="true" entry-point-ref="authenticationEntryPoint"  access-decision-manager-ref="myaccessDecisionManager">
         <!--
         属性                  Webonly?            描述                          例子
