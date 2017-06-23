@@ -8,7 +8,9 @@
 
 
 <!--配置跳过拦截器的url 或资源文件等-->
-    <http pattern="/user/findAll" security="none" />
+    <http pattern="/main/**" security="none" />
+    <http pattern="/sys/**" security="none" />
+    <http pattern="/user/**" security="none" />
     <http pattern="/static/css/**" security="none" />
     <http auto-config="false" use-expressions="true" entry-point-ref="authenticationEntryPoint"  access-decision-manager-ref="myaccessDecisionManager">
         <!--

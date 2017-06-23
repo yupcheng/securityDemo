@@ -15,7 +15,7 @@ import java.util.List;
  * Created by Administrator on 2017/6/11.
  */
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/sys/user")
 public class UserController {
 
     @Autowired
@@ -29,5 +29,11 @@ public class UserController {
 
     }
 
+    @RequestMapping(value = "/user_admin")
+    public String index()
+    {
+        return "/sys/user_admin";
+
+    }
 
 }
