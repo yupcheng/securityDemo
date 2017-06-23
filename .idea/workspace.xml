@@ -2,24 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fc5c114-def4-41d7-bc8e-2844db46a6ce" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/sys/user/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yu/spring/entity/Menu.class" afterPath="$PROJECT_DIR$/target/classes/com/yu/spring/entity/Menu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/dao/AbstractDao.class" afterPath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/dao/AbstractDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/dao/UserDao.class" afterPath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/dao/UserDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/dao/impl/MeunDaoImpl.class" afterPath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/dao/impl/MeunDaoImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/dao/impl/PrivilegeDaoImpl.class" afterPath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/dao/impl/PrivilegeDaoImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/dao/impl/UserDaoImpl.class" afterPath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/dao/impl/UserDaoImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/entity/Menu.class" afterPath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/entity/Menu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/service/UserService.class" afterPath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/service/UserService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/service/impl/UserServiceImpl.class" afterPath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/service/impl/UserServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/util/PageUtil.class" afterPath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/util/PageUtil.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/web/UserController.class" afterPath="$PROJECT_DIR$/target/SpringSecurityRoleBasedLogin/WEB-INF/classes/com/yu/spring/web/UserController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yu/spring/dao/AbstractDao.class" afterPath="$PROJECT_DIR$/target/classes/com/yu/spring/dao/AbstractDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yu/spring/dao/UserDao.class" afterPath="$PROJECT_DIR$/target/classes/com/yu/spring/dao/UserDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yu/spring/dao/impl/MeunDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/yu/spring/dao/impl/MeunDaoImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yu/spring/dao/impl/PrivilegeDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/yu/spring/dao/impl/PrivilegeDaoImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yu/spring/dao/impl/UserDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/yu/spring/dao/impl/UserDaoImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yu/spring/service/UserService.class" afterPath="$PROJECT_DIR$/target/classes/com/yu/spring/service/UserService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yu/spring/service/impl/UserServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/yu/spring/service/impl/UserServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yu/spring/util/PageUtil.class" afterPath="$PROJECT_DIR$/target/classes/com/yu/spring/util/PageUtil.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yu/spring/web/UserController.class" afterPath="$PROJECT_DIR$/target/classes/com/yu/spring/web/UserController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yu/spring/dao/AbstractDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/yu/spring/dao/AbstractDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yu/spring/dao/UserDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/yu/spring/dao/UserDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yu/spring/dao/impl/MeunDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/yu/spring/dao/impl/MeunDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yu/spring/dao/impl/PrivilegeDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/yu/spring/dao/impl/PrivilegeDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yu/spring/dao/impl/UserDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/yu/spring/dao/impl/UserDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yu/spring/entity/Menu.java" afterPath="$PROJECT_DIR$/src/main/java/com/yu/spring/entity/Menu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yu/spring/service/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/com/yu/spring/service/UserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yu/spring/service/impl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/yu/spring/service/impl/UserServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yu/spring/util/PageUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/yu/spring/util/PageUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yu/spring/web/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yu/spring/web/MainController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yu/spring/web/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yu/spring/web/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/main/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/main/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/common/jslib.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/static/common/jslib.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/common/tag_left.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/static/common/tag_left.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/common/taglib.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/static/common/taglib.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/sys/user/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/sys/user/index.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -96,12 +99,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/sys/user/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="104" column="20" lean-forward="false" selection-start-line="104" selection-start-column="20" selection-end-line="104" selection-end-column="20" />
-              <folding />
+            <state relative-caret-position="284">
+              <caret line="72" column="20" lean-forward="false" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="20" />
+              <folding>
+                <element signature="e#2086#2093#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -136,7 +141,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/yu/spring/web/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="460">
@@ -256,8 +261,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/yu/spring/dao/AbstractDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/yu/spring/dao/impl/MeunDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/yu/spring/dao/impl/PrivilegeDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/sys/user/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/yu/spring/web/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/sys/user/index.jsp" />
       </list>
     </option>
   </component>
@@ -1587,7 +1592,7 @@
       <workItem from="1497574457660" duration="17281000" />
       <workItem from="1497684380407" duration="16370000" />
       <workItem from="1497746721916" duration="17084000" />
-      <workItem from="1498179706277" duration="15393000" />
+      <workItem from="1498179706277" duration="16933000" />
     </task>
     <task id="LOCAL-00001" summary="更新代码，登陆失败已解决。原因：密码解析器没有配置">
       <created>1497424587663</created>
@@ -1708,7 +1713,14 @@
       <option name="project" value="LOCAL" />
       <updated>1498186573477</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="完成权限验证逻辑，登陆异常，访问无权限等处理下次解决&#10;添加注释&#10;&#10;重新写页面，本地库合并点错了导致新写的代码被删了">
+      <created>1498208928791</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1498208928791</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1744,7 +1756,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="224286000" />
+    <option name="totallyTimeSpent" value="225826000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1802,7 +1814,8 @@
     <MESSAGE value="完成权限验证逻辑，登陆异常，访问无权限等处理下次解决" />
     <MESSAGE value="完成权限验证逻辑，登陆异常，访问无权限等处理下次解决&#10;添加注释" />
     <MESSAGE value="完成权限验证逻辑，登陆异常，访问无权限等处理下次解决&#10;添加注释&#10;&#10;重新写页面" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成权限验证逻辑，登陆异常，访问无权限等处理下次解决&#10;添加注释&#10;&#10;重新写页面" />
+    <MESSAGE value="完成权限验证逻辑，登陆异常，访问无权限等处理下次解决&#10;添加注释&#10;&#10;重新写页面，本地库合并点错了导致新写的代码被删了" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成权限验证逻辑，登陆异常，访问无权限等处理下次解决&#10;添加注释&#10;&#10;重新写页面，本地库合并点错了导致新写的代码被删了" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2344,14 +2357,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/sys/user/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="104" column="20" lean-forward="false" selection-start-line="104" selection-start-column="20" selection-end-line="104" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/yu/spring/web/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="740">
@@ -2370,6 +2375,16 @@
         <state relative-caret-position="460">
           <caret line="32" column="37" lean-forward="true" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/sys/user/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="72" column="20" lean-forward="false" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="20" />
+          <folding>
+            <element signature="e#2086#2093#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
