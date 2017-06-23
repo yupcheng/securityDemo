@@ -21,7 +21,7 @@
             </li>
             <c:forEach items="${menuList}" var="menu">
                 <c:choose>
-                    <c:when test="${empty menu.childrens}">
+                    <c:when test="${empty menu.children}">
                         <li>
                             <a class="J_menuItem" href="${menu.url == null ? "" : menu.url}">
                                 <i class="fa fa-magic"></i> <span class="nav-label">${menu.title}</span>
@@ -32,7 +32,7 @@
                         <li>
                             <a href="#"><i class="fa fa-cutlery"></i> <span class="nav-label">${menu.title} </span>
                                 <span class="fa arrow"></span></a>
-                            <c:forEach items="${menu.childrens}" var="cmenu">
+                            <c:forEach items="${menu.children}" var="cmenu">
                                 <ul class="nav nav-second-level">
                                     <li><a class="J_menuItem" href="${cmenu.url == null ? "" : menu.url}">${cmenu.title}</a>
                                     </li>

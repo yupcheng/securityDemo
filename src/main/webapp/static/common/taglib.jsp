@@ -17,3 +17,6 @@
 <link href="${ctx}/static/css/animate.css" rel="stylesheet">
 <link href="${ctx}/static/css/style.css?v=4.1.0" rel="stylesheet">
 
+<%--bootstrap table--%>
+<link href="${ctx}/static/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+

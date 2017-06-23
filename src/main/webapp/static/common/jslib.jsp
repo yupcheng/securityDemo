@@ -13,3 +13,13 @@
 
 <!-- 第三方插件 -->
 <script src="${ctx}/static/js/plugins/pace/pace.min.js"></script>
+
+
+
+
+<script src="${ctx}/static/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="${ctx}/static/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+<script src="${ctx}/static/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+
+<!-- Peity -->
+<script src="${ctx}/static/js/demo/bootstrap-table-demo.js"></script>

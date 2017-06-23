@@ -26,8 +26,8 @@ public class UserServiceImpl implements UserService {
         return userDao.findById(id);
     }
     @Override
-    public PageUtil<User> findAll(User user) {
-        return userDao.findAll(user);
+    public PageUtil<User> queryPage(User user,PageUtil<User> pageUtil) {
+        return userDao.queryPage(user,pageUtil);
     }
 
     public User findBySso(String sso) {

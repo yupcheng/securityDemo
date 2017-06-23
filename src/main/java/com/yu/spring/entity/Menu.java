@@ -1,5 +1,7 @@
 package com.yu.spring.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Set;
@@ -32,8 +34,11 @@ public class Menu {
     private int sort;//排序
     @Column(name="CREATETIME", nullable=false)
     private Date createTime;
+    //@JsonIgnore
     @OneToMany(mappedBy = "menu",fetch = FetchType.LAZY)
     private Set<Privilege> privileges;
+    @Transient//忽略字段映射
+    private Set<Menu> children ;
     public int getId() {
         return id;
     }
@@ -112,6 +117,22 @@ public class Menu {
 
     public void setPrivileges(Set<Privilege> privileges) {
         this.privileges = privileges;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public Set<Menu> getChildren() {
+        return children;
+    }
+
+    public void setChildren(Set<Menu> children) {
+        this.children = children;
     }
 
     @Override

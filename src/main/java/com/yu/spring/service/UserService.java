@@ -13,5 +13,5 @@ public interface UserService {
     User findBySso(String sso);
 
     void save(User user);
-    PageUtil<User> findAll(User user);
+    PageUtil<User> queryPage(User user,PageUtil<User> pageUtil);
 }

@@ -13,5 +13,5 @@ public interface UserDao {
     User findBySSO(String sso);
 
     void persist(User user);
-    PageUtil<User> findAll(User user);
+    PageUtil<User> queryPage(User user,PageUtil<User> pageUtil);
 }

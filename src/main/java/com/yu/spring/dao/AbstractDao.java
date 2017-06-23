@@ -108,7 +108,7 @@ public abstract class AbstractDao<PK extends Serializable, T> {
             list = criteria.setFirstResult(pageUtil.getPageIndex()*pageUtil.getPageSize()).setMaxResults(pageUtil.getPageSize()).
                     list();
         }
-        pageUtil.setList(list);
+        pageUtil.setRows(list);
         return pageUtil;
     }
 

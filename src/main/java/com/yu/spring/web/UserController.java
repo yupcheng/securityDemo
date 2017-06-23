@@ -21,18 +21,19 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/findAll")
+    @RequestMapping(value = "/queryPage")
     @ResponseBody
-    public PageUtil<User> getAllUser()
+    public PageUtil<User> queryPage(int pageSize,int pageNumber)
     {
-        return userService.findAll(null);
+        PageUtil<User> pageUtil = new PageUtil<>(pageNumber-1,pageSize);
+        return userService.queryPage(null,pageUtil);
 
     }
 
-    @RequestMapping(value = "/user_admin")
+    @RequestMapping(value = "/index")
     public String index()
     {
-        return "/sys/user_admin";
+       return null;
 
     }
 

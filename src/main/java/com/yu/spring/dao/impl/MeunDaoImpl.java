@@ -65,7 +65,7 @@ public class MeunDaoImpl extends AbstractDao<Integer,Menu> implements MenuDao{
     public List<Menu> queryMenu() {
         PageUtil<Menu> pageUtil = new PageUtil<>(0,20);
         getAll(new Menu(),pageUtil);
-        return pageUtil.getList();
+        return pageUtil.getRows();
     }
 
 

@@ -11,7 +11,7 @@ public class PageUtil<T> {
     private int pageIndex;
     private int pageSize;
     private int total;
-    private List<T> list = new ArrayList<T>();
+    private List<T> rows = new ArrayList<T>();
     private String orderBy;
     private boolean desc;
     private int totalPage;
@@ -58,12 +58,12 @@ public class PageUtil<T> {
         this.total = total;
     }
 
-    public List<T> getList() {
-        return list;
+    public List<T> getRows() {
+        return rows;
     }
 
-    public void setList(List<T> list) {
-        this.list = list;
+    public void setRows(List<T> rows) {
+        this.rows = rows;
     }
 
     public String getOrderBy() {

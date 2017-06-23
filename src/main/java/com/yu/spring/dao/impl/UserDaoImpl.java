@@ -25,8 +25,8 @@ public class UserDaoImpl extends AbstractDao<Integer, User> implements UserDao {
     }
 
 
-    public PageUtil<User> findAll(User user) {
-        PageUtil<User> pageUtil = new PageUtil<>(0,20);
+    public PageUtil<User> queryPage(User user,PageUtil<User> pageUtil) {
+        //PageUtil<User> pageUtil = new PageUtil<>(0,20);
         return getAll(user,pageUtil);
     }
 }

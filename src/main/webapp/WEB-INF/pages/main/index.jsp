@@ -3,6 +3,7 @@
 <html>
 <head>
     <%@ include file="/static/common/taglib.jsp"%>
+    <title>YUAdmin主页</title>
 </head>
 
 <body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
@@ -16,7 +17,7 @@
             <%@ include file="/static/common/tag_top.jsp" %>
 
             <div class="row J_mainContent" id="content-main">
-                <iframe id="J_iframe" width="100%" height="100%" src="${ctx}/sys/user/user_admin" frameborder="0"></iframe>
+                <iframe id="J_iframe" width="100%" height="100%" src="${ctx}/sys/user/index" frameborder="0"></iframe>
             </div>
         </div>
         <!--右侧部分结束-->

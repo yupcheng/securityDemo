@@ -90,6 +90,6 @@ public class PrivilegeDaoImpl extends AbstractDao<Integer,Privilege> implements 
     public List<Privilege> queryPrivilege() {
         PageUtil<Privilege> pageUtil = new PageUtil<>(0,20);
         getAll(null,pageUtil);
-        return pageUtil.getList();
+        return pageUtil.getRows();
     }
 }
