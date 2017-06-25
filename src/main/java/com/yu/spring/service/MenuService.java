@@ -17,7 +17,7 @@ public interface MenuService {
      * @return
      */
     List<Menu> queryMenuByUid(Integer uid);
-
+    List<Map> queryJsonTreeAll();
     /**
      * 查询菜单子菜单
      *

@@ -6,10 +6,7 @@ import com.yu.spring.entity.User;
 import com.yu.spring.util.PageUtil;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
-import org.omg.CORBA.PUBLIC_MEMBER;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 @Repository("userDao")
 public class UserDaoImpl extends AbstractDao<Integer, User> implements UserDao {
@@ -27,6 +24,6 @@ public class UserDaoImpl extends AbstractDao<Integer, User> implements UserDao {
 
     public PageUtil<User> queryPage(User user,PageUtil<User> pageUtil) {
         //PageUtil<User> pageUtil = new PageUtil<>(0,20);
-        return getAll(user,pageUtil);
+        return queryByPage(user,pageUtil);
     }
 }

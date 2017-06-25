@@ -41,8 +41,13 @@ public abstract class AbstractDao<PK extends Serializable, T> {
      */
     protected Session getSession(){
         return sessionFactory.getCurrentSession();
+        //return sessionFactory.openSession();
     }
 
+    protected Session openSession()
+    {
+        return sessionFactory.openSession();
+    }
     @SuppressWarnings("unchecked")
     public T getByKey(PK key) {
         return (T) getSession().get(persistentClass, key);
@@ -74,7 +79,7 @@ public abstract class AbstractDao<PK extends Serializable, T> {
      * 分页条件查询
      * @return
      */
-    public PageUtil getAll(T t, PageUtil<T> pageUtil)
+    public PageUtil queryByPage(T t, PageUtil<T> pageUtil)
     {
         List<T> list =new ArrayList<>();
         //Session session = getSession();
@@ -112,5 +117,11 @@ public abstract class AbstractDao<PK extends Serializable, T> {
         return pageUtil;
     }
 
+    public List<T> queryAll()
+    {
+        Criteria criteria = createEntityCriteria();
+        return criteria.list();
+
+    }
 
 }

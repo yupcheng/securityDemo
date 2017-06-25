@@ -19,4 +19,18 @@
 
 <%--bootstrap table--%>
 <link href="${ctx}/static/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+<%--choose--%>
+<link href="${ctx}/static/css/plugins/iCheck/custom.css" rel="stylesheet">
+<link href="${ctx}/static/css/plugins/chosen/chosen.css" rel="stylesheet">
+<link href="${ctx}/static/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
 
+
+<link href="${ctx}/static/css/css/plugins/colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+
+<link href="${ctx}/static/css/css/plugins/cropper/cropper.min.css" rel="stylesheet">
+
+<link href="${ctx}/static/css/css/plugins/switchery/switchery.css" rel="stylesheet">
+
+<link href="${ctx}/static/css/css/plugins/jasny/jasny-bootstrap.min.css" rel="stylesheet">
+
+<link href="${ctx}/static/css/css/plugins/nouslider/jquery.nouislider.css" rel="stylesheet">

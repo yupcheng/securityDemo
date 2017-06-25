@@ -148,6 +148,7 @@ public class Menu {
                 ", sort=" + sort +
                 ", createTime=" + createTime +
                 ", privileges=" + privileges +
+                ", children=" + children +
                 '}';
     }
 

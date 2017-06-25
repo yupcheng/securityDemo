@@ -20,7 +20,7 @@
             <div>
                <%-- <iframe width="100%" height="100%" src="empty_page.jsp" frameborder="0"></iframe>--%>
 
-                <%@ include file="empty_page.jsp"%>
+                <%@ include file="menu/index.jsp"%>
             </div>
         </div>
         <!--右侧部分结束-->

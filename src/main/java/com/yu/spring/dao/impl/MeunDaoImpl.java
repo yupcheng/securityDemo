@@ -6,7 +6,13 @@ import com.yu.spring.dao.RoleDao;
 import com.yu.spring.dao.UserDao;
 import com.yu.spring.entity.Menu;
 import com.yu.spring.entity.Role;
+import com.yu.spring.entity.User;
 import com.yu.spring.util.PageUtil;
+import org.hibernate.Criteria;
+import org.hibernate.SQLQuery;
+import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
+import org.hibernate.transform.Transformers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -27,10 +33,14 @@ public class MeunDaoImpl extends AbstractDao<Integer,Menu> implements MenuDao{
      * @param uid
      * @return
      */
-
     @Override
     public List<Menu> queryMenuByUid(Integer uid) {
-        Set<Role> roles = userDao.findById(uid).getRoles();
+        User user = userDao.findById(uid);
+        if(user == null || user.getRoles() == null)
+        {
+            return null;
+        }
+        Set<Role> roles = user.getRoles();
         List<Menu> menus = new ArrayList<>();
         if(roles != null && roles.size() > 0)
         {
@@ -50,26 +60,35 @@ public class MeunDaoImpl extends AbstractDao<Integer,Menu> implements MenuDao{
         return null;
     }
 
+    /**
+     * 查询子节点菜单，包括自己
+     * @param id
+     * @return
+     */
     @Override
     public List<Menu> queryChildrenMenu(Integer id) {
-        return null;
+        /*Criteria criteria = createEntityCriteria();
+        criteria.add(Restrictions.eq("parentMenuId", id));*/
+        Session session = getSession();
+        String sql = "select * from menu where FIND_IN_SET(id , getChildList( ? )) > 0";
+        return session.createSQLQuery(sql).addEntity(Menu.class).setInteger(0,id).list();
+        //sq.setInteger(0,id);
+        //return sq.list();
     }
 
     @Override
     public List<Menu> queryMenuTreeAll() {
+
         return null;
     }
 
-
     @Override
-    public List<Menu> queryMenu() {
-        PageUtil<Menu> pageUtil = new PageUtil<>(0,20);
-        getAll(new Menu(),pageUtil);
-        return pageUtil.getRows();
+    public List<Map> queryJsonTreeAll() {
+        Session session = getSession();
+        String sql = "select * , title as text from menu order by sort ";
+        return session.createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
     }
 
-
-    @Override
     public List<Menu> queryMenuTreeAllByUser(Integer uid) {
         return null;
     }

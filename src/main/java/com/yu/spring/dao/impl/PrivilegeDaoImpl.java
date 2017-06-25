@@ -11,7 +11,6 @@ import com.yu.spring.util.PageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -89,7 +88,7 @@ public class PrivilegeDaoImpl extends AbstractDao<Integer,Privilege> implements 
     @Override
     public List<Privilege> queryPrivilege() {
         PageUtil<Privilege> pageUtil = new PageUtil<>(0,20);
-        getAll(null,pageUtil);
+        queryByPage(null,pageUtil);
         return pageUtil.getRows();
     }
 }

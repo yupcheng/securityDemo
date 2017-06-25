@@ -1,6 +1,7 @@
 package com.yu.spring.web;
 
 import com.yu.spring.entity.Menu;
+import com.yu.spring.service.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -21,6 +22,8 @@ import java.util.Set;
 @RequestMapping("/main")
 public class MainController {
 
+    @Autowired
+    private MenuService menuService;
 
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String dbaPage(ModelMap model) {
@@ -30,7 +33,7 @@ public class MainController {
     @ModelAttribute("menuList")
     public List<Menu> menuList()
     {
-        List<Menu> menuList = new ArrayList<>();
+       /* List<Menu> menuList = new ArrayList<>();
         Menu m = new Menu();
         m.setId(123);
         m.setMaker("132");
@@ -45,7 +48,8 @@ public class MainController {
         set.add(cm);
         m.setChildren(set);
         menuList.add(m);
-        return menuList;
+        return menuList;*/
+       return menuService.queryMenuTreeAll();
     }
 
 }

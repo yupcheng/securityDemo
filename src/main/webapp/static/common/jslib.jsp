@@ -23,3 +23,16 @@
 
 <!-- Peity -->
 <script src="${ctx}/static/js/demo/bootstrap-table-demo.js"></script>
+
+
+<%--treeview--%>
+<script src="${ctx}/static/js/plugins/treeview/bootstrap-treeview.js"></script>
+
+<%--我自己搜集的工具方法集合--%>
+<script src="${ctx}/static/js/util.form.js"></script>
+<script src="${ctx}/static/js/plugins/chosen/chosen.jquery.js"></script>
+
+<script src="${ctx}/static/js/demo/form-advanced-demo.js"></script>
+
+<script src="${ctx}/static/js/plugins/jasny/jasny-bootstrap.min.js"></script>
+<script src="${ctx}/static/js/plugins/jsKnob/jquery.knob.js"></script>

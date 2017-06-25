@@ -37,7 +37,7 @@ public interface MenuDao {
      *
      * @return
      */
-    List<Menu> queryMenu();
+    List<Menu> queryAll();
 
     /**
      * 所有的
@@ -46,6 +46,7 @@ public interface MenuDao {
      */
     List<Menu> queryMenuTreeAll();
 
+    List<Map> queryJsonTreeAll();
     /**
      * 查询指定用户下的菜单
      *
