@@ -51,8 +51,8 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label">上级菜单</label>
                             <div class="col-sm-8">
-                                <select data-placeholder="请选择上级菜单" onchange="selectChange(this)" class="chosen-select"  tabindex="2">
-                                    <option value="">无</option>
+                                <select data-placeholder="请选择上级菜单" id="parentMenuId" name="parentMenuId" onchange="selectChange(this)" class="chosen-select"  tabindex="2">
+                                    <option value="0">无</option>
                                     <%--<option value="110000" hassubinfo="true">北京</option>
                                     <option value="120000" hassubinfo="true">天津</option>--%>
                                 </select>
@@ -94,6 +94,11 @@
             onNodeSelected: function(event, data) {
                console.log(data);
                 $('#menuForm').setForm(data);
+                $(".chosen-select").chosen({parentMenuId : data.parentMenuId});
+                $('.chosen-select').trigger('chosen:updated');
+                console.log($('.chosen-select').val());
+              // $('#parentMenuId').change(data.parentMenuId);
+
             }
         });
         $(document).ready(function ()
@@ -127,7 +132,7 @@
         function selectChange(obj)
         {
             var value = obj.options[obj.selectedIndex];
-            alert(value);
+            console.log(value);
         }
     </script>
 
