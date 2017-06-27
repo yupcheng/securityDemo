@@ -34,7 +34,7 @@ public class Menu {
     private int sort;//排序
     @Column(name="CREATETIME", nullable=false)
     private Date createTime;
-    //@JsonIgnore
+    @JsonIgnore
     @OneToMany(mappedBy = "menu",fetch = FetchType.LAZY)
     private Set<Privilege> privileges;
     @Transient//忽略字段映射

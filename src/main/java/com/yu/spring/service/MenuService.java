@@ -10,6 +10,7 @@ import java.util.Map;
  */
 public interface MenuService {
 
+    public List<Menu> queryAll();
     /**
      * 查询指定用户下的菜单权限
      *

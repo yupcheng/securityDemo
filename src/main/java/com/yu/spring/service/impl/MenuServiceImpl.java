@@ -61,6 +61,12 @@ public class MenuServiceImpl implements MenuService {
         return parent;
     }
 
+
+    public List<Menu> queryAll()
+    {
+        return menuDao.queryAll();
+    }
+
     public void setJsonChildren(Map parent , List<Map> list)
     {
         BigInteger pid = (BigInteger)parent.get("id");

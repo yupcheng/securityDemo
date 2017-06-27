@@ -32,7 +32,9 @@
 <script src="${ctx}/static/js/util.form.js"></script>
 <script src="${ctx}/static/js/plugins/chosen/chosen.jquery.js"></script>
 
-<script src="${ctx}/static/js/demo/form-advanced-demo.js"></script>
+
 
 <script src="${ctx}/static/js/plugins/jasny/jasny-bootstrap.min.js"></script>
 <script src="${ctx}/static/js/plugins/jsKnob/jquery.knob.js"></script>
+<%--
+<script src="${ctx}/static/js/demo/form-advanced-demo.js"></script>--%>

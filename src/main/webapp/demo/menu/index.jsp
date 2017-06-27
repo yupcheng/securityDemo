@@ -51,10 +51,10 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label">上级菜单</label>
                             <div class="col-sm-8">
-                                <select data-placeholder="请选择上级菜单" onchange="selectChange(this)" class="chosen-select"  tabindex="2">
+                                <select data-placeholder="请选择上级菜单" class="chosen-select" style="width:100%">
                                     <option value="">无</option>
-                                    <%--<option value="110000" hassubinfo="true">北京</option>
-                                    <option value="120000" hassubinfo="true">天津</option>--%>
+                                    <option value="110000" hassubinfo="true">北京</option>
+                                    <option value="120000" hassubinfo="true">天津</option>
                                 </select>
                             </div>
                         </div>
@@ -98,37 +98,13 @@
         });
         $(document).ready(function ()
         {
-            /*var config = {
+            var config = {
                 '.chosen-select': {}
             }
             for (var selector in config) {
                 $(selector).chosen(config[selector]);
-            }*/
-            $('.chosen-select').chosen({
-                width:"100%",
-                no_results_text:"没有找到你要的结果哦！"
-            });
-        })
-        $.each( ${menuList}, function (index, units) {
-            var level = 'level_' + units.level;
-            console.log(units);
-            var option = ' <option value="'+ units.id +'" hassubinfo="true">' + units.title + '</option>';
-            if($("#" + level).length == 0)
-            {
-                var group =' <optgroup id="'+ level +'" label="'+ units.level +'级菜单"></optgroup>';
-                $('.chosen-select').append(group);
             }
-            $("#" + level).append(option);
-            console.log(option);
-
-        });
-
-
-        function selectChange(obj)
-        {
-            var value = obj.options[obj.selectedIndex];
-            alert(value);
-        }
+        })
     </script>
 
 </body>
